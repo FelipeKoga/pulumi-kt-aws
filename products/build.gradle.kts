@@ -2,7 +2,6 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
     kotlin("jvm")
-
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
@@ -34,15 +33,4 @@ kotlin {
 tasks.named<ShadowJar>("shadowJar") {
     enabled = true
     archiveFileName.set("products.jar")
-}
-
-tasks.register<Zip>("buildLambdaZip") {
-    from(sourceSets.main.get().output) {
-        into("classes")
-    }
-    from(configurations.runtimeClasspath) {
-        into("lib")
-    }
-    archiveFileName.set("products.zip")
-    destinationDirectory.set(layout.buildDirectory.dir("distributions"))
 }

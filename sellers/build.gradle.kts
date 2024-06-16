@@ -1,5 +1,8 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
 plugins {
     kotlin("jvm")
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "dev.koga"
@@ -21,4 +24,9 @@ tasks.test {
 }
 kotlin {
     jvmToolchain(11)
+}
+
+tasks.named<ShadowJar>("shadowJar") {
+    enabled = true
+    archiveFileName.set("sellers.jar")
 }
