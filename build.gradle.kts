@@ -2,17 +2,11 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
     kotlin("jvm") version "1.9.23"
-    id("application")
-
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "dev.koga"
 version = "1.0"
-
-application {
-    mainClass = "InfraApp"
-}
 
 repositories {
     mavenCentral()

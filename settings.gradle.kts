@@ -5,4 +5,3 @@ rootProject.name = "kotlin-aws-lambda"
 include("sellers")
 include("products")
 include("core")
-include("infra")
